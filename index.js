@@ -23,6 +23,10 @@ keys.addEventListener(`click`, e => {
             }
         }
 
+        if (action === 'display') {
+            display.textContent = displayNum + '.';
+        }
+
         if (
             action == `add` ||
             action == `subtract` ||
