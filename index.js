@@ -6,25 +6,26 @@ keys.addEventListener(`click`, e => {
         const key = e.target;
         const action = key.dataset.action;
         const keyContent = key.textContent;
-        const displayNum = display.textContent;
+        const displayedNum = display.textContent;
+        const previousKeyType = calculator.dataset.previousKeyType;
 
         if(!action) {
             console.log('number key!');
-            if (displayNum === '0') {
+            if (displayedNum === '0') {
                 display.textContent = keyContent;
             }
         }
 
         if(!action) {
-            if (displayNum === '0') {
+            if (displayedNum === '0') {
                 display.textContent = keyContent;
             } else {
-                display.textContent = displayNum + keyContent;
+                display.textContent = displayedNum + keyContent;
             }
         }
 
         if (action === 'display') {
-            display.textContent = displayNum + '.';
+            display.textContent = displayedNum + '.';
         }
 
         if (
@@ -54,13 +55,16 @@ keys.addEventListener(`click`, e => {
             action == `multiply` ||
             action == `divide`
         ) {
-            key.classList.add('is-depressed')
+            key.classList.add('is-depressed');
+            calculator.dataset.previousKeyType = 'operator';
+        }
+
+        if(!action) {
+            if
         }
 
         Array.from(key.parentNode.children)
             .forEach(k => k.classList.remove('is-depressed'));
-
-        
 
     }
 })
