@@ -48,6 +48,15 @@ keys.addEventListener(`click`, e => {
             console.log(`equal key`);
         }
 
+        if (
+            action == `add` ||
+            action == `subtract` ||
+            action == `multiply` ||
+            action == `divide`
+        ) {
+            key.classList.add('is-depressed')
+        }
+
     }
 })
 
