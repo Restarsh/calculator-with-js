@@ -5,9 +5,22 @@ keys.addEventListener(`click`, e => {
     if(e.target.matches(`button`)) {
         const key = e.target;
         const action = key.dataset.action;
+        const keyContent = key.textContent;
+        const displayNum = display.textContent;
 
         if(!action) {
             console.log('number key!');
+            if (displayNum === '0') {
+                display.textContent = keyContent;
+            }
+        }
+
+        if(!action) {
+            if (displayNum === '0') {
+                display.textContent = keyContent;
+            } else {
+                display.textContent = displayNum + keyContent;
+            }
         }
 
         if (
@@ -34,4 +47,18 @@ keys.addEventListener(`click`, e => {
     }
 })
 
+const display = document.querySelector(`calculator_display`);
 
+keys.addEventListener(`click`, e => {
+    if(e.target.matches(`button`)) {
+        const key = e.target;
+        const action  = key.dataset.action;
+        const keyContent = key.textContent;
+        const displayNum = display.textContent;
+
+        if (!action) {
+            
+        }
+    }
+    
+})
