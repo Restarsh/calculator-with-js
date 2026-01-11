@@ -57,21 +57,11 @@ keys.addEventListener(`click`, e => {
             key.classList.add('is-depressed')
         }
 
+        Array.from(key.parentNode.children)
+            .forEach(k => k.classList.remove('is-depressed'));
+
+        
+
     }
 })
 
-const display = document.querySelector(`calculator_display`);
-
-keys.addEventListener(`click`, e => {
-    if(e.target.matches(`button`)) {
-        const key = e.target;
-        const action  = key.dataset.action;
-        const keyContent = key.textContent;
-        const displayNum = display.textContent;
-
-        if (!action) {
-            
-        }
-    }
-    
-})
