@@ -80,3 +80,7 @@ keys.addEventListener(`click`, e => {
     }
 })
 
+const calculate = (n1, operator, n2) => {
+    //perform calculation and return result
+}
+
