@@ -60,7 +60,11 @@ keys.addEventListener(`click`, e => {
         }
 
         if(!action) {
-            if
+            if(displayedNum === '0' || previousKeyType === 'operator') {
+                display.textContent = keyContent;
+            } else {
+                display.textContent = displayedNum + keyContent;
+            }
         }
 
         Array.from(key.parentNode.children)
