@@ -46,6 +46,7 @@ keys.addEventListener(`click`, e => {
         }
 
         if (action == `calculate`) {
+            const secondValue = displayedNum;
             console.log(`equal key`);
         }
 
@@ -57,6 +58,8 @@ keys.addEventListener(`click`, e => {
         ) {
             key.classList.add('is-depressed');
             calculator.dataset.previousKeyType = 'operator';
+            calculator.dataset.firstValue = displayedNum;
+            calculator.dataset.operator = action;
         }
 
         if(!action) {
