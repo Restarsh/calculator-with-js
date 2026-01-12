@@ -82,5 +82,18 @@ keys.addEventListener(`click`, e => {
 
 const calculate = (n1, operator, n2) => {
     //perform calculation and return result
+
+    let result = '';
+
+    if (operator === 'add') 
+        result = n1 + n2;
+    else if(operator === 'subtract')
+        result = n1 - n2;
+    else if(operator === 'multiply')
+        result = n1 * n2;
+    else if(operator === 'divide')
+        result = n1 / n2;
+
+    return result;
 }
 
